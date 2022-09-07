@@ -4,12 +4,13 @@
   "description": "on crée le fichier table.js pour y crééer notre bdd et notre table",
   "main": "app.js",
   "scripts": {
-    "script" : "node app.js"
+    "script": "node app.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.0",
+    "dotenv": "^16.0.2",
     "express": "^4.18.1",
     "sqlite3": "^5.0.11"
   }

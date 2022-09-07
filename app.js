@@ -4,6 +4,9 @@ const bodyParser = require("body-parser");
 const sqlite = require("sqlite3").verbose();
 const app = express();
 const url = require("url");
+require('dotenv').config()
+
+console.log(process.env.PORT)
 let sql;
 const db = new sqlite.Database("./quote.db", sqlite.OPEN_READWRITE, (err) => {
   if (err) return console.error(err);
@@ -53,5 +56,7 @@ app.get("/quote", (req, res) => {
     });
   }
 });
+let port
+process.env.PORT ? port= process.env.PORT : port = 'https://api-node-sql.vercel.app/'
 
-app.listen(process.env.PORT || 3000, console.log("server listen on port 3000"));
+app.listen(port, console.log(`server listen on port ${port}`));
