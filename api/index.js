@@ -8,12 +8,12 @@ require('dotenv').config()
 
 console.log(process.env.PORT)
 let sql;
-const db = new sqlite.Database("./quote.db", sqlite.OPEN_READWRITE, (err) => {
+const db = new sqlite.Database("../quote.db", sqlite.OPEN_READWRITE, (err) => {
   if (err) return console.error(err);
 });
 app.use(bodyParser.json());
 // on ouvre :3000/quote aux requêtes post
-app.post("/quote", (req, res) => {
+app.post("/api/quote", (req, res) => {
   try {
     const { movie, quote, character } = req.body; // on destructure la requête
     sql = `INSERT INTO quote(movie,quote,character) VALUES(?,?,?)`;
@@ -34,7 +34,7 @@ app.post("/quote", (req, res) => {
   }
 });
 // get
-app.get("/quote", (req, res) => {
+app.get("/api/quote", (req, res) => {
   sql = "SELECT * FROM quote"; // requête qui va récupérer toutes la bdd
   try {
     const queryObject = url.parse(req.url, true).query;
