@@ -4,7 +4,7 @@
   "description": "on crée le fichier table.js pour y crééer notre bdd et notre table",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "script" : "node app.js"
   },
   "author": "",
   "license": "ISC",
