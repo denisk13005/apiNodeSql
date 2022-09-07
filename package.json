@@ -4,7 +4,7 @@
   "description": "on crée le fichier table.js pour y crééer notre bdd et notre table",
   "main": "app.js",
   "scripts": {
-    "script": "node app.js"
+    "start": "cd api && node index.js"
   },
   "author": "",
   "license": "ISC",
