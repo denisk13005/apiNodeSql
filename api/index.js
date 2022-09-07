@@ -57,6 +57,6 @@ app.get("/api/quote", (req, res) => {
   }
 });
 let port
-process.env.PORT ? port= process.env.PORT : port = 'https://api-node-sql.vercel.app'
+process.env.PORT ? port= process.env.PORT : port = 'https://api-node-sql.herokuapp.com'
 
 app.listen(port, console.log(`server listen on port ${port}`));
